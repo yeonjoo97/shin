@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2024 by yeonjoo97 (http://jsbin.com/mixelah/24/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title> 드라마 </title>
+  <style>
+    hr{
+      width:1000px;
+    }
+    .navbar {
+      width: 100%;
+      background-color: black;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      }
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      }
+    
+     .container {
+      width: 100%;
+      max-width: 100%;
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      }
+    
+ 
+    .줄거리 {width:800px;
+           padding :20px;
+           margin : 1px;
+          }
+    
+    .예고편 제목{text-align : center;
+          padding : 10px;
+          margin : 0px;}
+    
+    .등장인물 {width:700px;
+          padding : 10px;
+          margin : 10px;}
+    
+    .profile-img3 {width:1000px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    ul {list-style : none;
+        padding : 10px;
+        margin : 10px;}
+    
+    li {margin-bottom : 10px;}
+    
+    .profile-img {width :200px;
+                  float : left;
+                  margin-right:40px;
+                  margin-bottom:5px;
+                  border-radius:50%;}
+
+    .profile-img2 {width:1000px;}
+    
+    .등장인물2 {text-align : center;
+          width:60%;
+          background-color : #f0f0f0;
+          padding : 0px;
+          margin : 0px;
+          border: 1px solid #ccc;
+          border-radius: 100px;
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.1);}
+    
+    .줄거리제목 {text-align : center;
+          width:60%;
+          background-color : #f0f0f0;  
+          padding : 0px;
+          margin : 0px;
+          border: 1px solid #ccc;
+          border-radius: 100px;
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.1);}
+    
+    .예고편 {text-align : center;
+          background-color : #f0f0f0;
+          width:60%;
+          padding : 0px;
+          margin : 0px;
+          border: 1px solid #ccc;
+          border-radius: 100px;
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.1);}
+    
+    .video {width :1000px;
+           text-align: center;
+           }
+          padding : 20px;
+          margin bottom: 0px;}
+    
+    .t1 {text-align : center;}
+    
+    .next-drama-box { text-align : center;
+          width: 100%;
+          background-color : black;
+          color:white;
+          padding : 40px;
+          margin :0px;
+          border: 1px solid #ccc;
+          border-radius: 100px;
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+          }
+
+  .스틸컷 {
+    display: flex; 
+    justify-content: space-between;
+    width: 950px; 
+    }
+
+  .스틸컷 img {
+    width: 300px;
+    border: 2px solid #333; 
+    border-radius: 5px; 
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  }
+    .포토갤 {text-align : center;
+          width:60%;
+          background-color : #f0f0f0;  
+          padding : 0px;
+          margin : 35px;
+          border: 1px solid #ccc;
+          border-radius: 100px;
+          box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+
+  </style>
+<style id="jsbin-css">
+:root {
+  --accent-color: #ff0000; 
+  --text-color: #f0f4f5;
+  --background-color: #0b002b;}
+
+.body {
+  margin: 0;
+  font-family: 'Montserrat';}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 8px 12px;
+  z-index: 9999;}
+
+.nav_logo {
+  font-size: 24px;
+  color: var(--text-color);}
+
+.nav_logo i {
+  color: var(--accent-color);}
+
+.nav_logo span {
+  color: var(--accent-color);}
+
+.nav_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;}
+
+.nav_menu li {
+  padding: 8px 12px;}
+
+.nav_menu li:hover {
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  border-radius: 4px;}
+
+.nav_menu li a:hover {
+  color: var(--background-color);}
+
+.nav_icons {
+  display: flex;
+  color: #7dc0ff;
+  list-style: none;
+  padding-left: 0;}
+
+.summary {
+  text-align: center;
+}
+
+
+.네모 {
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+}
+
+.네모.왼쪽 {
+  left: 0;
+}
+
+.네모.오른쪽 {
+  right: 0;
+}
+
+.정보 {
+  text-align: center;
+  padding: 10px;
+  background-color: #e0e0e0;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0px 0;
+}
+
+
+hr {
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+
+
+</style>
+</head>
+<body>
+  <div class="네모 왼쪽"></div>
+  <div class="네모 오른쪽"></div>
+    <nav class="navbar">
+      <div class="nav_logo">
+       <a href="https://jsbin.com/zutarim/" class="home-icon"><img src="https://i.imgur.com/MruF48m.png" alt="Home" style="width: 180px; height: 60px;"></a>
+      </div>
+      <ul class="nav_menu">
+        <li><a href="https://jsbin.com/zutarim/">홈</a></li>
+        <li><a href="https://jsbin.com/pavuyey/">영화</a></li>
+        <li><a href="https://jsbin.com/mixelah/23/">드라마</a></li>
+        <li><a href="https://jsbin.com/gezasomewe/">애니메이션</a></li>
+        <li><a href="https://jsbin.com/ravuhuq/">뮤지컬</a></li>
+      </ul>
+    </nav>
+<div class="header">
+        <img class="profile-img2" src= "https://i.imgur.com/6i2m3jx.jpg">
+</div>
+    <div class="정보">
+    ⭐️ &nbsp &nbspJTBC &nbsp ⎪ &nbsp 2018.10.01. ~ 2018.11.20 &nbsp ⎪ &nbsp  16부작 &nbsp ⎪ &nbsp 판타지, &nbsp로맨틱코미디 &nbsp ⎪ &nbsp 15세+ &nbsp ⎪ &nbsp  대한민국 &nbsp ⎪ &nbsp 스튜디오앤뉴, 용필름 &nbsp &nbsp⭐️
+    </div><br><br>
+<div class="줄거리제목">
+    <p> <h3>줄거리 </h3></p>
+  </div><br>
+  
+<div class="줄거리">
+  아무도 자신을 알아보지 못하게 될까봐 두려워하며 사는 이 한세계와 평생 아무도 알아보지 못하고 사랑할 수 없다 생각한 이 서도재가 만나 어떤 모습이 되어도 알아볼 수 있는 여자, 한세계와 어떤 모습이 되어도 알아봐주는 남자, 서도재가 되어가는 이 드라마의 장르는 예측불허 좌충우돌 힐링 로맨스!
+   </div><br>
+
+<div class="등장인물2">
+  <p> <h3> 등장인물 </h3> </p>
+  </div><br>
+
+<div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/BlZ2eSQ.jpg">
+      <h2>한세계</h2>
+     <ul>
+        <li>배우</li>
+        세계를 가리키는 말은 무수히 많다. 그중 가장 대표적인 말은 신비주의, 스캔들 메이커, 신데렐라. 그녀의 매력은 이 세 가지에서 온다고 세간에서는 이를 한세계 버뮤다 삼종 세트라고도 칭했다. 신비주의라기에는 신비와는 영 거리가 먼 스캔들 메이커, 스캔들 메이커라기에는 잠은 꼭 집에 가서 자는 신데렐라. 반전의 반전을 거듭하는 이 매력들에 한 번 빠지면 헤어 나올 수 없다나.
+      </ul>
+    </div>
+
+  <div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/9y4HKdZ.jpg">
+      <h2>서도재</h2>
+     <ul>
+        <li> 선호그룹 티로드항공 본부장 </li>
+        세상에 평등이라는 말만큼 우스운 말은 없다. 도재를 보면 그런 생각이 든다. 태어날 때 축하 선물로 통장에 '0' 열한 개쯤은 가뿐히 받았고, 자라며 부친에게 받은 수려한 외모와 키를, 모친에게 받은 타고난 머리를 자랑했다. 그 자랑은 도재가 하는 것이 아니었다. 도재의 집안이, 도재의 집안이 가진 그룹이, 그 그룹이 발 딛고 서 있는 대한민국이 했다.
+      </ul>
+    </div>
+  <div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/Let8C5K.jpg">
+      <h2>강사라</h2>
+      <ul>
+        <li>선호그룹 원에어 대표</li>
+         한번 안건 절대 잊지 않는다. 똑똑하다 못해 맹랑하기까지 했던 아이는 첫 받아쓰기 백 점을 맞던 순간을 기억한다. 저를 향해 쏟아지던 칭찬과 박수, 그리고 선망의 시선. 그 말할 수 없는 짜릿함. 남들이 못하는 걸 하고 남들에게 없는 걸 갖게 되면 이 칭찬과 박수가, 이 선망의 시선이 끊이지 않을 것임을 사라는 그 순간 본능적으로 알았다. 사라는 절대 그것을 잊지 않았다. 그리고 그런 사라를 세상은 어느샌가 독한 년이라 부르고 있었다.
+      </ul>
+    </div>
+
+    <div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/EhAcf7E.jpg">
+      <h2>류은호</h2> 
+      <ul>
+        <li>신부 지망생</li>
+         고등학생 시절 은호가 지나가면 옆 학교 애들이 하나같이 소리쳤다. 야! 인간 포카리스웨트 지나간다! 그렇다. 일상으로 손실된 촉촉함을 존재만으로도 채워주는 남자. 도시에 살고 있음에도 도시의 혼탁함이라고는 찾아볼 수가 없는 숲처럼 고요한 남자. 뒤를 비추는 후광이 너무 세서 마음속 티끌 한 점 보이지 않는 남자. 그래서 감히 가지려 할 수 없는 남자. 그게 바로 은호였다. 
+      </ul>
+    </div><br>
+<div class="예고편 제목">
+    <p> <h3> 예고편 </h3></p>
+</div><p></p><br>
+
+<div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KNQB9zmBoh0" frameborder="0" allowfullscreen></iframe>
+</div>
+<br>
+<div class="포토갤">
+<h3>포토 갤러리</h3>
+</div><br>
+ </div>
+<div class="스틸컷">
+  <img src="https://i.imgur.com/ujl7Tc9.jpg" alt="이미지 1">
+  <img src="https://i.imgur.com/9qHoaKs.jpg" alt="이미지 2">
+  <img src="https://i.imgur.com/10efYxq.jpg" alt="이미지 3">
+</div><p></p><br>
+<div class="next-drama-box">
+  <h2>NEXT DRAMA<h2>
+</div>
+     <img class="profile-img3" src= "https://i.imgur.com/hsuIrjS.jpeg">
+<div class="정보">
+    ⭐️ &nbsp &nbspJTBC &nbsp ⎪ &nbsp 2020.09.21. ~ 2020.11.10 &nbsp ⎪ &nbsp  16부작 &nbsp ⎪ &nbsp 판타지, &nbsp로맨틱코미디 &nbsp ⎪ &nbsp 15세+ &nbsp ⎪ &nbsp 대한민국 &nbsp ⎪ &nbsp  JTBC 스튜디오 &nbsp &nbsp⭐️
+</div><br><br>
+<div class="줄거리제목">
+    <p> <h3>[ 줄거리 ]</h3></p>
+  </div><br>
+<div class="줄거리">
+ 이번 생은 망했다고 생각한 순간 기회가 찾아왔다. 이혼 직전, 열여덟 살로 돌아간 홍대영. 지금부턴 무능한 남편 대신 꿈 많은 소년으로 살아가련다. 18년 전 그때처럼. 꿈, 사랑, 가족을 이야기하기 위해 판타지 장르까지 끌어온 이 드라마는 
+젊음을 다시 만끽하는 ‘회춘’ 드라마
+망가진 관계를 바로잡는 ‘회복’ 드라마
+지나간 일을 되돌아보는 ‘회고’ 드라마
+ 
+더불어, 지금 이 현실이 지치고 힘든 당신에게
+나도 니들처럼 힘들 때 있었다, 그러니 견뎌보라는 꼰대 같은 위로 대신
+시원한 소다 한 잔 건네며, 그늘에서 잠깐 쉬었다 가자 말 건네는
+친구 같은 드라마
+  </div><br>
+</div>
+<div class="등장인물2">
+  <p> <h3> 등장인물 </h3> </p>
+  </div><br>
+
+<div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/lMOw46a.jpg">
+      <h2>정다정</h2> 
+     <ul>
+        <li>프리랜서 리포터 -> 늦깎이 신입 아나운서</li>
+        지금으로부터 18년 전,
+        정다정은 남학생들의 첫사랑이었고, 여학생들의 워너비였다.
+        여학생 무리에 섞여 있어도 빛이나 한 눈에 띄었고
+        현재, 20대 여자들 사이에 있어도 빛이 나는 최강동안이지만
+        사실 그녀는 열여덟 쌍둥이 남매를 자녀로 둔 삼십대 후반의 애 엄마다. 비록 이혼을 결정했지만, 쌍둥이 남매에겐 자랑스러운 엄마가 되고 싶었던 다정!
+        10년 넘게 포기하지 않고 아나운서 공채 문을 두드린 끝에
+        나이, 학력, 경력을 보지 않는 JBC 아나운서 블라인드 공채에
+        ‘실력만으로’ 당당히 채용된다
+      </ul>
+    </div>
+  <div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/DNvgKhA.jpg">
+      <h2>홍대영/고우영</h2>
+     <ul>
+        <li> 흔한 아저씨 → 고등학교 농구계 슈퍼루키 </li>
+        지금으로부터 18년 전,
+        홍대영은 여학생들의 첫사랑이었고, 남학생들의 워너비였다.
+        남학생 무리에 섞여 있어도 빛이나 한 눈에 띄던 그는
+        현재, 아저씨 무리에 잘 섞여 있는 흔한 아저씨가 됐고
+        고교농구대회 MVP를 휩쓸며 농구천재라 불린 그는
+        현재, 아내에게 이혼서류를 받고, 자식들에겐 무시당하고, 직장에선 해고됐다.
+        모든 게 무너진 그 날!
+        세상은 그대로인데, 놀랍게도 홍대영의 몸만 18년 전 리즈시절로 돌아갔다!
+        망가진 인생을 ‘새로고침’ 해보라는 신의 선물인걸까?
+      </ul>
+    </div>
+
+  <div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/IfTR4hC.jpeg">
+      <h2>홍시아</h2>
+      <ul>
+        <li>세림고 걸크러쉬</li>
+         평화로운 학교생활이었다. 고우영이 전학 오기 전까지는! 고우영의 꼰대 같은 잔소리와 참견으로 학교생활이 괴로워진 시아. 하지만 티격태격 하는 와중에 우영을 보면 이상하게 아빠가 떠오르고, 친구가 되려고 노력하는 우영에게 서서히 마음을 열게 된다. 한편, ‘남자는 아빠 같은 남자만 아니면 된다!’ 라고 입버릇처럼 말하던 시아는 고우영이 자신을 좋아한다는 소문을 듣게 되고 동시에 호감을 표하며 다가오는 자성과 지호에 혼란스럽다.
+      </ul>
+    </div>
+
+    <div class="등장인물">
+      <img class="profile-img" src="https://i.imgur.com/MclsZPA.jpg">
+      <h2>예지훈</h2> 
+      <ul>
+        <li>세움 울브즈 소속 야구 투수</li>
+         호리호리한 몸매지만 하체는 다부지고, 여유로운 표정과 장난스런 눈매가 매력적이다.
+         세련된 외모와 매너, 유려한 말발과 쇼맨십으로 다수의 여성 팬을 확보하고,
+         좋은 성적으로 남성 팬들도 확보한, 지금 대한민국에서 가장 핫한 야구선수 예지훈! 그런 지훈의 앞에 자꾸 ‘정다정’이라는 여자가 나타난다. 대중들의 공격에 유일하게 자신을 걱정해준 사람이 바로, 다정이었다.
+         은퇴까지 생각한 지훈은 다정에게 큰 위로와 힘을 얻었고,
+          그 때부터 호감 이상의 감정을 느끼기 시작하는데...
+        </ul>
+    </div>
+<br>
+<div class="예고편 제목">
+    <p> <h3> 예고편 </h3></p>
+</div><p></p><br>
+   <div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/iTh1tguNJGA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div> <br>  
+ <div class="포토갤">
+<h3>포토 갤러리</h3>
+ </div><br>
+<div class="스틸컷">
+  <img src="https://i.imgur.com/aY4x6PR.jpg" alt="이미지 1">
+  <img src="https://i.imgur.com/1132Vai.jpg" alt="이미지 2">
+  <img src="https://i.imgur.com/6zSAgro.jpg" alt="이미지 3">
+</div><p></p>
+<hr>
+Develop by_신연주
+<p>
+  <script id="jsbin-javascript">
+
+ 
+</script>
+</body>
+ 
+</html>
